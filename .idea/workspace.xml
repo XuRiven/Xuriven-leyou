@@ -16,7 +16,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Xuriven-LeYou" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -28,14 +28,15 @@
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="downloadSourcesAutomatically" value="true" />
         <option name="importAutomatically" value="true" />
         <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1Yjpe0gsBIOpIAjT2hG0pRSduoN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -46,7 +47,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -69,6 +70,13 @@
     <configuration name="LeYouGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="leyou-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.leyou.LeYouGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeyouItemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="leyou-item-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.leyou.LeyouItemApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,8 +132,16 @@
       <updated>1583465948438</updated>
       <workItem from="1583465949771" duration="2735000" />
       <workItem from="1583563193121" duration="231000" />
-      <workItem from="1583563489536" duration="2112000" />
+      <workItem from="1583563489536" duration="5583000" />
     </task>
+    <task id="LOCAL-00001" summary="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心">
+      <created>1583569265019</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583569265019</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,5 +157,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
+    <option name="LAST_COMMIT_MESSAGE" value="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
   </component>
 </project>
