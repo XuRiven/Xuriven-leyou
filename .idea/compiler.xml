@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="leyou-item-interface" />
         <module name="leyou-common" />
-        <module name="leyou-gateway" />
+        <module name="leyou-item-interface" />
         <module name="leyou-item-service" />
+        <module name="leyou-gateway" />
         <module name="leyou-registry" />
       </profile>
     </annotationProcessing>

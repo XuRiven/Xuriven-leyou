@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dd0cb38-09b3-4605-8350-e70bd4b6043e" name="Default Changelist" comment="" />
+    <list default="true" id="9dd0cb38-09b3-4605-8350-e70bd4b6043e" name="Default Changelist" comment="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +44,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Xuriven-leyou-manage-web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -104,17 +104,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f9b319f5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f9b319f5" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4012776" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -132,7 +122,8 @@
       <updated>1583465948438</updated>
       <workItem from="1583465949771" duration="2735000" />
       <workItem from="1583563193121" duration="231000" />
-      <workItem from="1583563489536" duration="5583000" />
+      <workItem from="1583563489536" duration="5764000" />
+      <workItem from="1583647189391" duration="2073000" />
     </task>
     <task id="LOCAL-00001" summary="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心">
       <created>1583569265019</created>
@@ -152,13 +143,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Xuriven-LeYou" />
+    </ignored-roots>
     <MESSAGE value="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
     <option name="LAST_COMMIT_MESSAGE" value="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
   </component>
