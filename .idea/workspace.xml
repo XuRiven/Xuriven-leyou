@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dd0cb38-09b3-4605-8350-e70bd4b6043e" name="Default Changelist" comment="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
+    <list default="true" id="9dd0cb38-09b3-4605-8350-e70bd4b6043e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +11,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -38,6 +39,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -47,7 +49,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Xuriven-leyou-manage-web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -66,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LeyouRegistryApplication">
+  <component name="RunManager" selected="Spring Boot.LeyouItemApplication">
     <configuration name="LeYouGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="leyou-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.leyou.LeYouGatewayApplication" />
@@ -104,7 +106,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ad177f7f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ad177f7f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@be5c1d00" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -124,7 +136,8 @@
       <workItem from="1583563193121" duration="231000" />
       <workItem from="1583563489536" duration="5764000" />
       <workItem from="1583647189391" duration="2073000" />
-      <workItem from="1583803549002" duration="416000" />
+      <workItem from="1583803549002" duration="11698000" />
+      <workItem from="1583842631731" duration="6958000" />
     </task>
     <task id="LOCAL-00001" summary="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心">
       <created>1583569265019</created>
@@ -133,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583569265019</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="商品分类和品牌查询">
+      <created>1583850561858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583850561858</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,10 +173,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/Xuriven-LeYou" />
     </ignored-roots>
     <MESSAGE value="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
-    <option name="LAST_COMMIT_MESSAGE" value="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
+    <MESSAGE value="商品分类和品牌查询" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品分类和品牌查询" />
   </component>
 </project>
