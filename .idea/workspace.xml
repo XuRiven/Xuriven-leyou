@@ -124,6 +124,7 @@
       <workItem from="1583563193121" duration="231000" />
       <workItem from="1583563489536" duration="5764000" />
       <workItem from="1583647189391" duration="2073000" />
+      <workItem from="1583803549002" duration="416000" />
     </task>
     <task id="LOCAL-00001" summary="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心">
       <created>1583569265019</created>
