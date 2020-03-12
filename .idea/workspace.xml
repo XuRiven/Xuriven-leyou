@@ -1,7 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dd0cb38-09b3-4605-8350-e70bd4b6043e" name="Default Changelist" comment="" />
+    <list default="true" id="9dd0cb38-09b3-4605-8350-e70bd4b6043e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/1526115791468.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526119788914.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526132934902.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526133224362.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526133576597.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526140298249.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526181553737.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526205318630.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526205664373.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526205705687.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526206304954.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526216993249.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526218080029.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526222999115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526224372366.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526224447288.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526224495244.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526224563838.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1526224628514.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528196441781.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528206263148.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528207561145.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528207592222.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528207829275.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528207959591.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528208592430.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528208647458.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528210016174.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528210076570.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528210349042.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528210594296.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528210800331.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528211066645.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1528211235872.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530558480117.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530561043794.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530628921453.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530631029488.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530632722477.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530659309094.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530667007162.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530672258955.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530674011487.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530674402709.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530686443089.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530687657711.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530688192442.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530690428352.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530696121642.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530696509189.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530698685973.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530698782261.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530713222558.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530715294772.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530715390747.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530715447962.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530715487863.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530717439794.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530717442747.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530720235186.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530720263937.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530720298725.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530722029884.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530722272476.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530722280952.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530722617437.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530722674897.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1530722728379.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1532827997361.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1532850873556.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1532920403019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1532920492769.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1532923048027.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1539821449329.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1543400932873.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1543646177641.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545221873038.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545221936052.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545222288968.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545222410267.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545222464105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545222532196.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545222628405.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545222756536.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545223244002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545223341933.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545223629762.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/1545223731347.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/qs-2.gif" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,12 +199,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ad177f7f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bfc590b7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ad177f7f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@be5c1d00" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bfc590b7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@809cc973" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -137,7 +227,10 @@
       <workItem from="1583563489536" duration="5764000" />
       <workItem from="1583647189391" duration="2073000" />
       <workItem from="1583803549002" duration="11698000" />
-      <workItem from="1583842631731" duration="6958000" />
+      <workItem from="1583842631731" duration="7560000" />
+      <workItem from="1583892044376" duration="4305000" />
+      <workItem from="1583917345308" duration="39000" />
+      <workItem from="1583978777889" duration="4971000" />
     </task>
     <task id="LOCAL-00001" summary="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心">
       <created>1583569265019</created>
@@ -153,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583850561858</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="商品品牌新增">
+      <created>1583983238214</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583983238214</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +279,7 @@
     </ignored-roots>
     <MESSAGE value="搭建后台环境&#10;common:通用的工具类: utils、pojo&#10;gateway:网关微服务: 服务路由、请求过滤 &#10;item:商品的聚合工程&#10;    item-interface:分享一些pojo、接口、异常&#10;    item-service:商品的微服务&#10;registry:服务的注册中心" />
     <MESSAGE value="商品分类和品牌查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="商品分类和品牌查询" />
+    <MESSAGE value="商品品牌新增" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品品牌新增" />
   </component>
 </project>
