@@ -124,7 +124,7 @@ Nginx代理过程：
 
 # 2.跨域问题
 
-跨域：浏览器对于javascript的同源策略的限制 。
+**跨域：ajax请求才会出现跨域，当一个请求url的协议、域名、端口三者之间任意一个与当前页面url不同即为跨域,浏览器对于javascript的同源策略的限制 。**
 
 以下情况都属于跨域：
 
@@ -182,4 +182,167 @@ public class LeyouCorsConfiguration {
     }
 }
 ```
+
+# 3.品牌的新增
+
+## 3.1.表单提交
+
+在submit方法中添加表单提交的逻辑：
+
+```js
+submit() {
+    console.log(this.$qs);
+    // 表单校验
+    if (this.$refs.myBrandForm.validate()) {
+        // 定义一个请求参数对象，通过解构表达式来获取brand中的属性{categories letter name image}
+        const {categories, letter, ...params} = this.brand; // params:{name, image, cids, letter}
+        // 数据库中只要保存分类的id即可，因此我们对categories的值进行处理,只保留id，并转为字符串
+        params.cids = categories.map(c => c.id).join(",");
+        // 将字母都处理为大写
+        params.letter = letter.toUpperCase();
+        // 将数据提交到后台
+        // this.$http.post('/item/brand', this.$qs.stringify(params))
+        this.$http({
+            method: this.isEdit ? 'put' : 'post',
+            url: '/item/brand',
+            data: params
+        }).then(() => {
+            // 关闭窗口
+            this.$emit("close");
+            this.$message.success("保存成功！");
+        })
+            .catch(() => {
+            this.$message.error("保存失败！");
+        });
+    }
+}
+```
+
+1. 通过`this.$refs.myBrandForm`选中表单，然后调用表单的`validate`方法，进行表单校验。返回boolean值，true代表校验通过
+2. 通过解构表达式来获取brand中的值，categories需要处理，单独获取。其它的存入params对象中
+3. 品牌和商品分类的中间表只保存两者的id，而brand.categories中保存的是对象数组，里面有id和name属性，因此这里通过数组的map功能转为id数组，然后通过join方法拼接为字符串
+4. 发起请求
+5. 弹窗提示成功还是失败，这里用到的是我们的自定义组件功能message组件
+
+## 3.2.后台实现新增
+
+### 3.2.1.controller
+
+还是一样，先分析四个内容：
+
+- 请求方式：POST
+- 请求路径：/brand
+- 请求参数：brand对象，外加商品分类的id数组cids
+- 返回值：无，只需要响应状态码
+
+代码：
+
+```java
+    /**
+     * 新增品牌
+     * @param brand
+     * @param cids
+     */
+    @PostMapping
+    public ResponseEntity<Void> saveBrand(Brand brand, @RequestParam("cids") List<Long> cids){
+        this.brandService.saveBrand(brand, cids);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+```
+
+
+
+### 3.2.2.Service
+
+这里要注意，我们不仅要新增品牌，还要维护品牌和商品分类的中间表。
+
+```java
+    /**
+     * 新增品牌
+     *
+     * @param brand
+     * @param cids
+     */
+    @Transactional
+    public void saveBrand(Brand brand, List<Long> cids) {
+
+        // 先新增brand
+        this.brandMapper.insertSelective(brand);
+
+        // 在新增中间表
+        cids.forEach(cid -> {
+            this.brandMapper.insertCategoryAndBrand(cid, brand.getId());
+        });
+    }
+```
+
+这里调用了brandMapper中的一个自定义方法，来实现中间表的数据新增
+
+### 3.2.3.Mapper
+
+通用Mapper只能处理单表，也就是Brand的数据，因此我们手动编写一个方法及sql，实现中间表的新增：
+
+```java
+public interface BrandMapper extends Mapper<Brand> {
+
+    /**
+     * 新增商品分类和品牌中间表数据
+     * @param cid 商品分类id
+     * @param bid 品牌id
+     * @return
+     */
+    @Insert("INSERT INTO tb_category_brand(category_id, brand_id) VALUES (#{cid},#{bid})")
+    int insertBrandAndCategory(@Param("cid") Long cid, @Param("bid") Long bid);
+}
+```
+
+### 3.2.4.测试
+
+![](D:\IDEAWorkspace\Xuriven-leyou\assets\1532827997361.png)
+
+400：请求参数不合法
+
+
+
+## 3.3.解决400
+
+### 3.3.1.原因分析
+
+我们填写表单并提交，发现报错了。查看控制台的请求详情：
+
+![](D:\IDEAWorkspace\Xuriven-leyou\assets\1530696121642.png)
+
+发现请求的数据格式是JSON格式。
+
+> 原因分析：
+
+**axios处理请求体的原则会根据请求数据的格式来定：**
+
+- **如果请求体是对象：会转为json发送，如果发送的时json数据，后台controller方法中只能写一个对象来接收，不能写多个，然而brand对象中又没有cids属性，所以只能通过qs将前台传过来的参数进行转换。**
+
+- **如果请求体是String：会作为普通表单请求发送，但需要我们自己保证String的格式是键值对。**
+
+  **如：name=jack&age=12**
+
+### 3.3.2.QS工具
+
+QS是一个第三方库，我们可以用`npm install qs --save`来安装。不过我们在项目中已经集成了，大家无需安装
+
+**这个工具的名字：QS，即Query String，请求参数字符串。**
+
+**什么是请求参数字符串？例如： name=jack&age=21**
+
+**QS工具可以便捷的实现 JS的Object与QueryString的转换。**
+
+在我们的项目中，将QS注入到了Vue的原型对象中，我们可以通过`this.$qs`来获取这个工具：
+
+![](D:\IDEAWorkspace\Xuriven-leyou\assets\1539821449329.png)
+
+### 3.3.3.解决问题
+
+修改页面，对参数处理后发送：
+
+![](D:\IDEAWorkspace\Xuriven-leyou\assets\1545223244002.png)
+
+然后再次发起请求，发现请求成功：![](D:\IDEAWorkspace\Xuriven-leyou\assets\1530698685973.png)
 
