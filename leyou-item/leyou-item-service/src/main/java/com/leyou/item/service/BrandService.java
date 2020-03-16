@@ -50,6 +50,11 @@ public class BrandService {
         return new PageResult<>(pageInfo.getTotal(), pageInfo.getList());
     }
 
+    /**
+     * 保存商品信息
+     * @param brand
+     * @param cids
+     */
     @Transactional
     public void saveBrand(Brand brand, List<Long> cids) {
         //先新增brand
@@ -59,5 +64,28 @@ public class BrandService {
             this.brandMapper.insertBrandAndCategory(cid,brand.getId());
         });
 
+    }
+
+    /**
+     * 修改商品信息
+     * @param brand
+     * @param cids
+     */
+    @Transactional
+    public void updateBrand(Brand brand, List<Long> cids) {
+        //先修改brand
+        this.brandMapper.updateByPrimaryKeySelective(brand);
+        //在修改中间表(先删除再新增)
+        this.brandMapper.deleteBrandAndCategory(brand.getId());
+        cids.forEach(cid->{
+            this.brandMapper.insertBrandAndCategory(cid,brand.getId());
+        });
+    }
+
+
+    public void deleteBrand(Long bid) {
+        if (bid!=null){
+            this.brandMapper.deleteByPrimaryKey(bid);
+        }
     }
 }
