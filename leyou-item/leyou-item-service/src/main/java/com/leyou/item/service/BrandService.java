@@ -82,10 +82,25 @@ public class BrandService {
         });
     }
 
-
+    /**
+     * 根据bid删除品牌
+     * @param bid
+     * @return
+     */
     public void deleteBrand(Long bid) {
         if (bid!=null){
             this.brandMapper.deleteByPrimaryKey(bid);
         }
+    }
+
+
+
+    /**
+     * 根据分类id查询品牌
+     * @param cid
+     * @return
+     */
+    public List<Brand> queryBrandsByCid(Long cid) {
+        return this.brandMapper.selectBrandByCid(cid);
     }
 }

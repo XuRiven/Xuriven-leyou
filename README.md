@@ -346,3 +346,120 @@ QS是一个第三方库，我们可以用`npm install qs --save`来安装。不�
 
 然后再次发起请求，发现请求成功：![](D:\IDEAWorkspace\Xuriven-leyou\assets\1530698685973.png)
 
+
+
+# 4.实现文件上传
+
+## 4.1.文件上传的缺陷
+
+先思考一下，现在上传的功能，有没有什么问题？
+
+上传本身没有任何问题，问题出在保存文件的方式，我们是保存在服务器机器，就会有下面的问题：
+
+- 单机器存储，存储能力有限
+- 无法进行水平扩展，因为多台机器的文件无法共享,会出现访问不到的情况
+- 数据没有备份，有单点故障风险
+- 并发能力差
+
+这个时候，最好使用分布式文件存储来代替本地文件存储。
+
+## 4.2.FastDFS
+
+### 4.2.1.什么是分布式文件系统
+
+分布式文件系统（Distributed File System）是指文件系统管理的物理存储资源不一定直接连接在本地节点上，而是通过计算机网络与节点相连。 
+
+通俗来讲：
+
+- 传统文件系统管理的文件就存储在本机。
+- 分布式文件系统管理的文件存储在很多机器，这些机器通过网络连接，要被统一管理。无论是上传或者访问文件，都需要通过管理中心来访问
+
+### 4.2.2什么是FastDFS
+
+FastDFS是由淘宝的余庆先生所开发的一个轻量级、高性能的开源分布式文件系统。用纯C语言开发，功能丰富：
+
+- 文件存储
+- 文件同步
+- 文件访问（上传、下载）
+- 存取负载均衡
+- 在线扩容
+
+适合有大容量存储需求的应用或系统。同类的分布式文件系统有谷歌的GFS、HDFS（Hadoop）、TFS（淘宝）等。
+
+### 4.2.3.FastDFS架构图
+
+![](D:\IDEAWorkspace\Xuriven-leyou\assets\1526205318630.png)
+
+FastDFS两个主要的角色：Tracker Server 和 Storage Server 。
+
+- Tracker Server：跟踪服务器，主要负责调度storage节点与client通信，在访问上起负载均衡的作用，和记录storage节点的运行状态，是连接client和storage节点的枢纽。 
+- Storage Server：存储服务器，保存文件和文件的meta data（元数据），每个storage server会启动一个单独的线程主动向Tracker cluster中每个tracker server报告其状态信息，包括磁盘使用情况，文件同步情况及文件上传下载次数统计等信息
+- Group：文件组，多台Storage Server的集群。上传一个文件到同组内的一台机器上后，FastDFS会将该文件即时同步到同组内的其它所有机器上，起到备份的作用。不同组的服务器，保存的数据不同，而且相互独立，不进行通信。 
+- Tracker Cluster：跟踪服务器的集群，有一组Tracker Server（跟踪服务器）组成。
+- Storage Cluster ：存储集群，有多个Group组成。
+
+### 4.2.4.上传和下载流程
+
+上传
+
+![](D:\IDEAWorkspace\Xuriven-leyou\assets\1526205664373.png)
+
+1. Client通过Tracker server查找可用的Storage server。
+2. Tracker server向Client返回一台可用的Storage server的IP地址和端口号。
+3. Client直接通过Tracker server返回的IP地址和端口与其中一台Storage server建立连接并进行文件上传。
+4. 上传完成，Storage server返回Client一个文件ID，文件上传结束。
+
+下载
+
+![](D:\IDEAWorkspace\Xuriven-leyou\assets\1526205705687.png)
+
+1. Client通过Tracker server查找要下载文件所在的的Storage server。
+2. Tracker server向Client返回包含指定文件的某个Storage server的IP地址和端口号。
+3. Client直接通过Tracker server返回的IP地址和端口与其中一台Storage server建立连接并指定要下载文件。
+4. 下载文件成功。
+
+### 4.2.5.FastDFS-Client（java客户端）
+
+**引入依赖**
+
+这里我们直接在taotao-upload工程的pom.xml中引入坐标即可：
+
+```xml
+<dependency>
+    <groupId>com.github.tobato</groupId>
+    <artifactId>fastdfs-client</artifactId>
+</dependency>
+```
+
+**引入配置类**
+
+```java
+@Configuration
+@Import(FdfsClientConfig.class)
+// 解决jmx重复注册bean的问题
+@EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
+public class FastClientImporter {
+    
+}
+```
+
+**编写FastDFS属性**
+
+在application.yml配置文件中追加如下内容：
+
+```yaml
+fdfs:
+  so-timeout: 1501 # 超时时间
+  connect-timeout: 601 # 连接超时时间
+  thumb-image: # 缩略图
+    width: 60
+    height: 60
+  tracker-list: # tracker地址：你的虚拟机服务器地址+端口（默认是22122）
+    - 192.168.56.101:22122
+```
+
+**配置hosts**
+
+将来通过域名：image.leyou.com这个域名访问fastDFS服务器上的图片资源。所以，需要代理到虚拟机地址：
+
+配置hosts文件，使image.leyou.com可以访问fastDFS服务器
