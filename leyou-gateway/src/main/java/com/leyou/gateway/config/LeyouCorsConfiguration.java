@@ -10,19 +10,29 @@ import org.springframework.web.filter.CorsFilter;
 public class LeyouCorsConfiguration {
     @Bean
     public CorsFilter corsFilter(){
-        //初始化cors配置对象
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        //允许跨域的域名，如果要携带cookie，不能写*。 *:代表所有域名都可以跨域访问
-        corsConfiguration.addAllowedOrigin("http://manage.leyou.com");
-        corsConfiguration.setAllowCredentials(true); //允许携带cookie
-        corsConfiguration.addAllowedMethod("*"); //代表所有的请求方法:GET,POST,Delete
-        corsConfiguration.addAllowedHeader("*"); //允许携带任何头信息
+        //1.添加CORS配置信息
+        CorsConfiguration config = new CorsConfiguration();
+        //1) 允许的域,不要写*，否则cookie就无法使用了
+        config.addAllowedOrigin("http://manage.leyou.com");
+        config.addAllowedOrigin("http://www.leyou.com");
+        //2) 是否发送Cookie信息
+        config.setAllowCredentials(true);
+        //3) 允许的请求方式
+        config.addAllowedMethod("OPTIONS");
+        config.addAllowedMethod("HEAD");
+        config.addAllowedMethod("GET");
+        config.addAllowedMethod("PUT");
+        config.addAllowedMethod("POST");
+        config.addAllowedMethod("DELETE");
+        config.addAllowedMethod("PATCH");
+        // 4）允许的头信息
+        config.addAllowedHeader("*");
 
-        //初始化cors配置源对象
-        UrlBasedCorsConfigurationSource configurationSource = new UrlBasedCorsConfigurationSource();
-        configurationSource.registerCorsConfiguration("/**",corsConfiguration);
+        //2.添加映射路径，我们拦截一切请求
+        UrlBasedCorsConfigurationSource configSource = new UrlBasedCorsConfigurationSource();
+        configSource.registerCorsConfiguration("/**", config);
 
-        //返回corsFilter对象,参数:cors配置源对象
-        return new CorsFilter(configurationSource);
+        //3.返回新的CorsFilter.
+        return new CorsFilter(configSource);
     }
 }
